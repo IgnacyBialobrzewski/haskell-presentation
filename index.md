@@ -16,6 +16,19 @@ Michał Bujak_
 
 ---
 
+# Table of contents
+
+1. <a href="#3">What is Haskell?</a>
+2. <a href="#4">What is functional programming?</a>
+3. <a href="#5">Why use Haskell?</a>
+4. <a href="#6">Haskell in the industry</a>
+5. <a href="#7">Hands-on Haskell</a>
+6. <a href="#10">Closing remarks</a>
+7. <a href="#11">Learning resources</a>
+8. <a href="#12">Sources</a>
+
+---
+
 # What is Haskell?
 
 Haskell is a **general-purpose, statically-typed functional programming language** named after the American logician Haskell Curry. It's used for teaching, research, and industry-grade applications.
@@ -34,13 +47,13 @@ In functional programming, every function is "**Pure**" i.e., **a function will 
 
 # Why use Haskell?
 
-Haskell shines when it comes to developing maintainable industrial-grade systems due to its **robust type system** and the **predictable nature** of functional programming while preserving programmer productivity stemming from Haskell's **simplistic syntax**.
+Haskell shines when it comes to developing maintainable industrial systems due to its **robust type system** and the **predictable nature** of functional programming while preserving programmer productivity stemming from Haskell's **simplistic syntax**.
 
-While Haskell is often used for large-scale systems that an average developer might not encounter, it's still an **excellent learning experience that will improve one's perception of programming in general**.
+While Haskell is often used for large-scale systems that an average developer might not encounter, it's still an **excellent learning experience that will improve one's perception of programming as a whole**.
 
 ---
 
-# Companies with Haskell in production
+# Haskell in the industry
 
 -   **Hasura**
     -   GraphQL Engine
@@ -71,7 +84,7 @@ addOne :: Int -> Int
 addOne x = x + 1
 ```
 
-`addXY` is curried so it takes an `Int` and returns a partial function `addXY :: Int -> Int` which then evaluates to `Int`
+`addXY` is curried so it takes an `Int` and returns a partial function `(Int -> Int)` which also takes an `Int` and then evaluates to `Int`
 
 ```hs
 addXY :: Int -> Int -> Int
@@ -80,14 +93,14 @@ addXY x y = x + y
 
 ---
 
-# Hands-on Haskell - Functions
+# Hands-on Haskell - Recursion & list comprehensions
 
 `fib` is recursive and uses **pattern-matching**, takes an `Int` and evaluates to an `Int`
 
 ```hs
 fib :: Int -> Int
-fib 0 = 0
-fib 1 = 1
+fib 0 = 0 -- Base case
+fib 1 = 1 -- Base case
 fib n = fib (n - 1) + fib (n - 2)
 ```
 
@@ -124,6 +137,20 @@ main = do
     input <- readFile "input.txt" -- these are our values separated with "\n"
     print $ sumLines 0 (lines input) -- turn the input to lines and sum them
 ```
+
+---
+
+# Closing remarks
+
+_Haskell stands apart not merely due to its succinct syntax or exceptional speed and portability. It distinguishes itself by compelling developers to adopt an unconventional perspective when approaching problems, fostering a profound shift in how we conceive and tackle obstacles in the field of engineering._
+
+---
+
+# Learning resources
+
+-   <a href="http://learnyouahaskell.com/">Learn you a Haskell</a> - Light but rapid introduction to Haskell and the principles of functional programming.
+-   <a href="https://book.realworldhaskell.org/">Real World Haskell</a> - A look into Haskell and the problems involved with developing real software using it.
+-   <a href="https://www.youtube.com/watch?v=Vgu82wiiZ90">Haskell for Imperative Programmers</a> - Easily digestible overview of Haskell in a video form for people used to the imperative paradigm.
 
 ---
 
